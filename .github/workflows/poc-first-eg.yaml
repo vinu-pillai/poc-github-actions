@@ -1,0 +1,16 @@
+name: First WF of POC
+
+on: push
+
+jobs:
+    first_job:
+        runs-on: ubuntu-latest
+        steps:
+        - name: Welcome Message
+          run: echo "This is first GHA Job"
+
+        - name: List Files
+          run: ls -l
+        
+        - name: Read the file
+          run: cat README.md
