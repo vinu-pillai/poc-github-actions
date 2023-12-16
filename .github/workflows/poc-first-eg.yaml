@@ -10,7 +10,7 @@ jobs:
           run: echo "This is first GHA Job"
 
         - name: Checkout the Repo
-          uses: actions/checkout@main
+          uses: actions/checkout@v4
 
         - name: List Files
           run: ls -l
