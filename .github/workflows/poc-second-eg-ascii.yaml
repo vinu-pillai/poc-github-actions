@@ -1,0 +1,17 @@
+name: Second WF of POC
+
+on: push
+
+jobs:
+    first_job:
+        runs-on: ubuntu-latest
+        steps:
+        - name: Checkout the Repo
+          uses: actions/checkout@v4
+
+        - name: Execute the Shell Script
+          run: |
+            ls -latr
+            sleep 10
+            echo "Running the script after 10 seconds"
+            ./ascii-script.sh
