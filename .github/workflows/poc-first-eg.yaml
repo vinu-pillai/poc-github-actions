@@ -9,11 +9,14 @@ jobs:
         - name: Welcome Message
           run: echo "This is first GHA Job"
 
-        - name: List Files
-          run: ls -l
-
         - name: Checkout the Repo
           uses: actions/checkout@main
+
+        - name: List Files
+          run: ls -l
+          
+        - name: Print the Current Working Directory
+          run: pwd          
         
         - name: Read the file
-          run: cat ../README.md
+          run: cat README.md
