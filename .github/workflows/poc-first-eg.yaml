@@ -11,6 +11,9 @@ jobs:
 
         - name: List Files
           run: ls -l
+
+        - name: Checkout the Repo
+          uses: actions/checkout@main
         
         - name: Read the file
           run: cat ../README.md
