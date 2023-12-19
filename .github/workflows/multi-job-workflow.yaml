@@ -13,21 +13,12 @@ jobs:
     - name: Execute cowsay command
       run: cowsay -f dragon "Run for the cover, I am a Dragon....RAWR" >> dragon.txt
 
-    - name: Stay calm and Sleep a while
-      run: sleep 30
-      
-      
-  artifact_job_nan:
-    needs: build_job_1    
-    runs-on: ubuntu-latest
-    steps:
     - name: Upload the artifact from build job
       uses: actions/upload-artifact@v3
       with:
         name: dragon-text-file
-        path: dragon.txt  
-
-
+        path: dragon.txt    
+     
   test_job_2:
     needs: build_job_1
     runs-on: ubuntu-latest
