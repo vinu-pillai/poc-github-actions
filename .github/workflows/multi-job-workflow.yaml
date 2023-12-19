@@ -23,8 +23,10 @@ jobs:
     needs: build_job_1
     runs-on: ubuntu-latest
     steps:
-    - name: Why don't you start with sleeping for 10 seconds
-      run: sleep 10
+    - name: Download the artifact 
+      uses: actions/download-artifact@v3
+      with:
+        name: dragon-text-file
 
     - name: Test - if file exists
       run: grep -i "dragon" dragon.txt
@@ -33,6 +35,11 @@ jobs:
     needs: test_job_2
     runs-on: ubuntu-latest
     steps:
+    - name: Download the artifact 
+      uses: actions/download-artifact@v3
+      with:
+        name: dragon-text-file
+              
     - name: Read the file and Display the content
       run: cat dragon.txt
 
