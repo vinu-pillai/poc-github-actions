@@ -5,7 +5,7 @@ on:
 
 jobs:
   build_job_1:
-    runs_on: ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
     - name: Install cowsay program
       run: sudo apt-get install cowsay -y
@@ -17,7 +17,7 @@ jobs:
       run: sleep 30      
 
   test_job_2:
-    runs_on: ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
     - name: Why don't you start with sleeping for 10 seconds
       run: sleep 10
@@ -26,7 +26,7 @@ jobs:
       run: grep -i "dragon" dragon.txt
 
   deploy_job_3:
-    runs_on: ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
     - name: Read the file and Display the content
       run: cat dragon.txt
