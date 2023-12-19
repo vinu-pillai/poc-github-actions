@@ -1,0 +1,35 @@
+name: MultiJob WF to Generate ASCII Artwork
+
+on:
+  push
+
+jobs:
+  build_job_1:
+    runs_on: ubuntu-latest
+    steps:
+    - name: Install cowsay program
+      run: sudo apt-get install cowsay -y
+
+    - name: Execute cowsay command
+      run: cowsay -f dragon "Run for the cover, I am a Dragon....RAWR" >> dragon.txt
+
+    - name: Stay calm and Sleep a while
+      run: sleep 30      
+
+  test_job_2:
+    runs_on: ubuntu-latest
+    steps:
+    - name: Why don't you start with sleeping for 10 seconds
+      run: sleep 10
+
+    - name: Test - if file exists
+      run: grep -i "dragon" dragon.txt
+
+  deploy_job_3:
+    runs_on: ubuntu-latest
+    steps:
+    - name: Read the file and Display the content
+      run: cat dragon.txt
+
+    - name: Fake Deploy
+      run: echo "Deploying......"
