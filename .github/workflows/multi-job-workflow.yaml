@@ -27,7 +27,7 @@ jobs:
       run: grep -i "dragon" dragon.txt
 
   deploy_job_3:
-    needs: test_job_1
+    needs: test_job_2
     runs-on: ubuntu-latest
     steps:
     - name: Read the file and Display the content
